@@ -1,22 +1,19 @@
-import React from 'react'
-import {Router, Stack, Scene} from 'react-native-router-flux';
-import {
-    LoginScreen,
-    OnboardingScreen,
-    RegisterScreen,
-} from '../screens'
+import React from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import OnboardingScreen from '../screens/OnboardingScreen/OnboardingScreen';
 
 
-const Navigation = () => {
-  return (
-    <Router>
-        <Stack key="root">
-          <Scene key="splash" component={OnboardingScreen} hideNavBar={true} initial />
-          <Scene key="onboarding" component={LoginScreen} hideNavBar={true} />
-          <Scene key="register" component={RegisterScreen} hideNavBar={true} />
-        </Stack>
-      </Router>
+const {Navigator, Screen} = createNativeStackNavigator();
+
+const Navigation = () =>{
+  return(
+    <NavigationContainer>
+      <Navigator screenOptions={{headerShown: false}} initialRouteName='onboarding'>
+        <Screen name='onboarding' component={OnboardingScreen}></Screen>
+      </Navigator>
+    </NavigationContainer>
   )
 }
 
-export default Navigation
+export default Navigation;

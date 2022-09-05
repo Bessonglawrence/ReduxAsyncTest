@@ -8,10 +8,11 @@ const OnboardingScreen = () => {
         pages={[
             {
                 backgroundColor: '#fff',
-                image: <Image style={{height: 350, width: 400,}} source={require('../../images/never_give_up.png')} />,
+                image: <Image style={{height: 350, width: 400,}} source={require('../../images/hardworking.png')} />,
                 title: 'Hard Work',
                 subtitle: 'Little drops make an ocean. One commit a day will go a long way',
-                titleStyles: {fontWeight:'700'}
+                titleStyles: {color: '#b790c4',fontWeight:'700'},
+                subTitleStyles:{color: '#dbc7e2'}
             },
             {
                 backgroundColor: '#fff',
@@ -34,4 +35,4 @@ const OnboardingScreen = () => {
   )
 }
 
-export default OnboardingScreen
+export default OnboardingScreen;
