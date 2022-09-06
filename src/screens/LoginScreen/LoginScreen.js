@@ -1,6 +1,7 @@
-import { StyleSheet, Text, View, Image, TextInput, } from 'react-native'
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import React from 'react'
+import Button from '../../components/Button';
 
 const LoginScreen = () => {
   return (
@@ -15,6 +16,15 @@ const LoginScreen = () => {
         <Icon name='lock' size={30} color='grey' style={{marginRight: 15, marginTop: 8}}/>
         <TextInput style={styles.texInputStyle} placeholder='Password' placeholderTextColor='grey' underlineColorAndroid='#e4e5e5'/>
       </View>
+      <TouchableOpacity>
+        <Text style={{color: '#1393ec', fontWeight: '600', alignSelf: 'flex-end', marginVertical: 5}}>Forgot Password?</Text>
+      </TouchableOpacity>
+      <Button buttonText='Login'/>
+      <View style={{flexDirection: 'row', alignSelf: 'center', marginVertical: 16}}>
+        <View style={{borderBottomWidth: 1.5, borderColor: 'lightgrey', width: 120, marginBottom: 8}}></View>
+          <Text style={{color: 'grey', marginHorizontal: 15, fontWeight: '500',}}>OR</Text>
+        <View style={{borderBottomWidth: 1.5, borderColor: 'lightgrey', width: 120, marginBottom: 8}}></View>
+      </View>
     </View>
   )
 }
@@ -28,15 +38,15 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20
   },
   headerText:{
-    marginVertical: 30,
+    marginVertical: 15,
     color: 'grey',
     fontSize: 35,
     fontWeight: 'bold',
     fontStyle: 'italic'
   },
   imageStyle:{
-    height: 300,
-    width: 400,
+    height: 180,
+    width: 290,
     marginTop: 40,
     alignSelf: 'center'
   },
@@ -49,6 +59,7 @@ const styles = StyleSheet.create({
   },
   inputSection:{
     flexDirection: 'row',
-    marginTop: 10
+   // marginTop: 10,
+    marginBottom: 6
   }
 })
