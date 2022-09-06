@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, } from 'rea
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import React from 'react'
 import Button from '../../components/Button';
+import GreyButton from '../../components/GreyButton';
 
 const LoginScreen = () => {
   return (
@@ -25,6 +26,7 @@ const LoginScreen = () => {
           <Text style={{color: 'grey', marginHorizontal: 15, fontWeight: '500',}}>OR</Text>
         <View style={{borderBottomWidth: 1.5, borderColor: 'lightgrey', width: 120, marginBottom: 8}}></View>
       </View>
+      <GreyButton />
     </View>
   )
 }
