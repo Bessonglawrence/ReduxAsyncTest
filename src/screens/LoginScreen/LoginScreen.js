@@ -1,4 +1,12 @@
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, } from 'react-native'
+import { 
+  StyleSheet, 
+  Text, 
+  View, 
+  Image, 
+  TextInput, 
+  TouchableOpacity,
+  KeyboardAvoidingView
+} from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import React from 'react'
 import Button from '../../components/Button';
@@ -6,28 +14,38 @@ import GreyButton from '../../components/GreyButton';
 
 const LoginScreen = () => {
   return (
-    <View style={styles.main}>
-      <Image style={styles.imageStyle}  source={require('../../images/handShake.png')} />
-      <Text style={styles.headerText}>Login</Text>
-      <View style={styles.inputSection}>
-        <Icon name='account-circle' size={30} color='grey' style={{marginRight: 15, marginTop: 8}}/>
-        <TextInput style={styles.texInputStyle} placeholder='Email ID' placeholderTextColor='grey' underlineColorAndroid='#e4e5e5'/>
-      </View>
-      <View style={styles.inputSection}>
-        <Icon name='lock' size={30} color='grey' style={{marginRight: 15, marginTop: 8}}/>
-        <TextInput style={styles.texInputStyle} placeholder='Password' placeholderTextColor='grey' underlineColorAndroid='#e4e5e5'/>
-      </View>
-      <TouchableOpacity>
-        <Text style={{color: '#1393ec', fontWeight: '600', alignSelf: 'flex-end', marginVertical: 5}}>Forgot Password?</Text>
-      </TouchableOpacity>
-      <Button buttonText='Login'/>
-      <View style={{flexDirection: 'row', alignSelf: 'center', marginVertical: 16}}>
-        <View style={{borderBottomWidth: 1.5, borderColor: 'lightgrey', width: 120, marginBottom: 8}}></View>
-          <Text style={{color: 'grey', marginHorizontal: 15, fontWeight: '500',}}>OR</Text>
-        <View style={{borderBottomWidth: 1.5, borderColor: 'lightgrey', width: 120, marginBottom: 8}}></View>
-      </View>
-      <GreyButton />
-    </View>
+  
+      <KeyboardAvoidingView 
+        style={{flex: 1, marginBottom: 20}} 
+        behavior='padding'
+        keyboardVerticalOffset={25}
+
+      >
+        <View style={styles.main}>
+        <Image style={styles.imageStyle}  source={require('../../images/handShake.png')} />
+        <Text style={styles.headerText}>Login</Text>
+
+        <View style={styles.inputSection}>
+          <Icon name='account-circle' size={30} color='grey' style={{marginRight: 15, marginTop: 8}}/>
+          <TextInput style={styles.texInputStyle} placeholder='Email ID' placeholderTextColor='grey' underlineColorAndroid='#e4e5e5'/>
+        </View>
+        <View style={styles.inputSection}>
+          <Icon name='lock' size={30} color='grey' style={{marginRight: 15, marginTop: 8}}/>
+          <TextInput style={styles.texInputStyle} placeholder='Password' placeholderTextColor='grey' underlineColorAndroid='#e4e5e5'/>
+        </View>
+
+        <TouchableOpacity>
+          <Text style={{color: '#1393ec', fontWeight: '600', alignSelf: 'flex-end', marginVertical: 5}}>Forgot Password?</Text>
+        </TouchableOpacity>
+        <Button buttonText='Login'/>
+        <View style={{flexDirection: 'row', alignSelf: 'center', marginVertical: 16}}>
+          <View style={{borderBottomWidth: 1.5, borderColor: 'lightgrey', width: 120, marginBottom: 8}}></View>
+            <Text style={{color: 'grey', marginHorizontal: 15, fontWeight: '500',}}>OR</Text>
+          <View style={{borderBottomWidth: 1.5, borderColor: 'lightgrey', width: 120, marginBottom: 8}}></View>
+        </View>
+        <GreyButton />
+        </View>
+      </KeyboardAvoidingView>
   )
 }
 
@@ -61,7 +79,6 @@ const styles = StyleSheet.create({
   },
   inputSection:{
     flexDirection: 'row',
-   // marginTop: 10,
     marginBottom: 6
   }
 })
