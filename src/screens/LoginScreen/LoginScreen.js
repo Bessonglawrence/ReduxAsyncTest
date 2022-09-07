@@ -5,14 +5,27 @@ import {
   Image, 
   TextInput, 
   TouchableOpacity,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
+  Alert
 } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import React from 'react'
+import React,{useState} from 'react'
 import Button from '../../components/Button';
 import GreyButton from '../../components/GreyButton';
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const {forgotText, icons, orSection, orViews,  main, headerText, imageStyle, texInputStyle, inputSection} = styles;
+  const onLoginPress = () =>{
+    if (password.length > 5 && email.length > 5){
+      Alert.alert(`My email is ${email} and password is ${password}`);
+    }else if(password.length < 5 && email.length > 5 || password.length > 5 && email.length < 5) {
+      Alert.alert(`Either password or email is too short`)
+    }else{
+      Alert.alert(`Invalid credentials`)
+    }
+  }
   return (
   
       <KeyboardAvoidingView 
@@ -21,29 +34,50 @@ const LoginScreen = () => {
         keyboardVerticalOffset={25}
 
       >
-        <View style={styles.main}>
-        <Image style={styles.imageStyle}  source={require('../../images/handShake.png')} />
-        <Text style={styles.headerText}>Login</Text>
+        <View style={main}>
+        <Image style={imageStyle}  source={require('../../images/handShake.png')} />
+        <Text style={headerText}>Login</Text>
 
-        <View style={styles.inputSection}>
-          <Icon name='account-circle' size={30} color='grey' style={{marginRight: 15, marginTop: 8}}/>
-          <TextInput style={styles.texInputStyle} placeholder='Email ID' placeholderTextColor='grey' underlineColorAndroid='#e4e5e5'/>
+        <View style={inputSection}>
+          <Icon name='account-circle' size={30} color='grey' style={icons}/>
+          <TextInput 
+            style={texInputStyle} 
+            placeholder='Email ID' 
+            placeholderTextColor='grey' 
+            underlineColorAndroid='#e4e5e5'
+            value={email}
+            onChangeText={setEmail}
+          />
         </View>
-        <View style={styles.inputSection}>
-          <Icon name='lock' size={30} color='grey' style={{marginRight: 15, marginTop: 8}}/>
-          <TextInput style={styles.texInputStyle} placeholder='Password' placeholderTextColor='grey' underlineColorAndroid='#e4e5e5'/>
+        <View style={inputSection}>
+          <Icon name='lock' size={30} color='grey' style={icons}/>
+          <TextInput 
+            style={texInputStyle} 
+            placeholder='Password' 
+            placeholderTextColor='grey' 
+            underlineColorAndroid='#e4e5e5'
+            value={password}
+            onChangeText={setPassword}
+          />
         </View>
 
         <TouchableOpacity>
-          <Text style={{color: '#1393ec', fontWeight: '600', alignSelf: 'flex-end', marginVertical: 5}}>Forgot Password?</Text>
+          <Text style={forgotText}>Forgot Password?</Text>
         </TouchableOpacity>
-        <Button buttonText='Login'/>
-        <View style={{flexDirection: 'row', alignSelf: 'center', marginVertical: 16}}>
-          <View style={{borderBottomWidth: 1.5, borderColor: 'lightgrey', width: 120, marginBottom: 8}}></View>
+        <Button buttonText='Login' onPress={onLoginPress}/>
+        <View style={orSection}>
+          <View style={orViews}></View>
             <Text style={{color: 'grey', marginHorizontal: 15, fontWeight: '500',}}>OR</Text>
-          <View style={{borderBottomWidth: 1.5, borderColor: 'lightgrey', width: 120, marginBottom: 8}}></View>
+          <View style={orViews}></View>
         </View>
         <GreyButton />
+        <View style={{flexDirection: 'row', alignSelf: 'center', marginTop: 30}}>
+          <Text style={{color: 'grey', fontSize: 16, fontStyle: 'italic'}}>New here?</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('register')}>
+            <Text style={{color: '#3c84db', fontSize: 16, fontWeight: '500', marginLeft: 10}}>Register</Text>
+          </TouchableOpacity>
+        </View>
+
         </View>
       </KeyboardAvoidingView>
   )
@@ -75,10 +109,32 @@ const styles = StyleSheet.create({
     width: 250,
     paddingTop: 5,
     marginBottom: 5,
-    fontStyle: 'italic'
+    fontStyle: 'italic',
+    color: 'grey'
   },
   inputSection:{
     flexDirection: 'row',
     marginBottom: 6
+  },
+  forgotText:{
+    color: '#1393ec', 
+    fontWeight: '600', 
+    alignSelf: 'flex-end', 
+    marginVertical: 2
+  },
+  orSection:{
+    flexDirection: 'row', 
+    alignSelf: 'center', 
+    marginVertical: 16
+  },
+  orViews:{
+    borderBottomWidth: 1.5, 
+    borderColor: 'lightgrey', 
+    width: 120, 
+    marginBottom: 8
+  },
+  icons:{
+    marginRight: 15, 
+    marginTop: 8
   }
 })
