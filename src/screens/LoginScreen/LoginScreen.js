@@ -15,7 +15,7 @@ import GreyButton from '../../components/GreyButton';
 
 const LoginScreen = ({navigation}) => {
   const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const {forgotText, icons, orSection, orViews,  main, headerText, imageStyle, texInputStyle, inputSection} = styles;
   const onLoginPress = () =>{
     if (password.length > 5 && email.length > 5){
@@ -42,11 +42,11 @@ const LoginScreen = ({navigation}) => {
           <Icon name='account-circle' size={30} color='grey' style={icons}/>
           <TextInput 
             style={texInputStyle} 
-            placeholder='Email ID' 
+            placeholder='E.g John Doe' 
             placeholderTextColor='grey' 
             underlineColorAndroid='#e4e5e5'
-            value={email}
-            onChangeText={setEmail}
+            value={username}
+            onChangeText={setUsername}
           />
         </View>
         <View style={inputSection}>

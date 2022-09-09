@@ -5,7 +5,7 @@ const logIn = async (user) =>{
     if(username === "Lawrence" && password === "password"){
         AsyncStorage.setItem("user", JSON.stringify(user))
         return{
-            status: 'Success',
+            status: 'success',
             message: 'You have been logged In',
             user: username
         }
@@ -16,7 +16,7 @@ const logIn = async (user) =>{
 const logOut = async () =>{
     AsyncStorage.clear()
     return{
-        status: 'Success',
+        status: 'success',
         message: 'You have been logged Out'
     }
 }
