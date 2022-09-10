@@ -12,20 +12,33 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import React,{useState} from 'react'
 import Button from '../../components/Button';
 import GreyButton from '../../components/GreyButton';
+import { useDispatch } from 'react-redux';
+import { login } from '../../redux/Actions/authAction';
 
 const LoginScreen = ({navigation}) => {
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
+
+  const dispatch = useDispatch();
+
   const {forgotText, icons, orSection, orViews,  main, headerText, imageStyle, texInputStyle, inputSection} = styles;
-  const onLoginPress = () =>{
-    if (password.length > 5 && email.length > 5){
-      Alert.alert(`My email is ${email} and password is ${password}`);
-    }else if(password.length < 5 && email.length > 5 || password.length > 5 && email.length < 5) {
-      Alert.alert(`Either password or email is too short`)
-    }else{
-      Alert.alert(`Invalid credentials`)
+
+  const onLogin = () =>{
+    let user = {
+        username: username,
+        password: password,
     }
+    dispatch(login(user))
+    .then((response) =>{
+      if(response.status === "success"){
+        navigation.replace("home");
+      }
+    })
+    .catch((error) =>{
+      navigation.replace('Error')
+    })
   }
+
   return (
   
       <KeyboardAvoidingView 
@@ -64,12 +77,15 @@ const LoginScreen = ({navigation}) => {
         <TouchableOpacity>
           <Text style={forgotText}>Forgot Password?</Text>
         </TouchableOpacity>
-        <Button buttonText='Login' onPress={onLoginPress}/>
+
+        <Button buttonText='Login' onPress={() => onLogin()}/>
+
         <View style={orSection}>
           <View style={orViews}></View>
             <Text style={{color: 'grey', marginHorizontal: 15, fontWeight: '500',}}>OR</Text>
           <View style={orViews}></View>
         </View>
+
         <GreyButton />
         <View style={{flexDirection: 'row', alignSelf: 'center', marginTop: 30}}>
           <Text style={{color: 'grey', fontSize: 16, fontStyle: 'italic'}}>New here?</Text>
