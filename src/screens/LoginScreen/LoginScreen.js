@@ -31,7 +31,7 @@ const LoginScreen = ({navigation}) => {
     dispatch(login(user))
     .then((response) =>{
       if(response.status === "success"){
-        navigation.replace("home");
+        navigation.replace("Home");
       }
     })
     .catch((error) =>{
@@ -89,7 +89,7 @@ const LoginScreen = ({navigation}) => {
         <GreyButton />
         <View style={{flexDirection: 'row', alignSelf: 'center', marginTop: 30}}>
           <Text style={{color: 'grey', fontSize: 16, fontStyle: 'italic'}}>New here?</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('register')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Register')}>
             <Text style={{color: '#3c84db', fontSize: 16, fontWeight: '500', marginLeft: 10}}>Register</Text>
           </TouchableOpacity>
         </View>

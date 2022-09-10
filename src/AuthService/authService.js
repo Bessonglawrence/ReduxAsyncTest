@@ -1,4 +1,4 @@
-import AsyncStorage from "@react-native-async-storage/AsyncStorage";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const logIn = async (user) =>{
     const { username, password } = user;

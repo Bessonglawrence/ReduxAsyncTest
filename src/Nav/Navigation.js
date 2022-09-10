@@ -14,11 +14,29 @@ const Navigation = () =>{
   return(
     <NavigationContainer>
       <Navigator initialRouteName='Login' >
-        <Screen screenOptions={{headerShown: false}} name='onboarding' component={OnboardingScreen} />
-        <Screen name='Login' component={LoginScreen} screenOptions={{headerShown: false}} />
-        <Screen name='Register' component={RegisterScreen} />
-        <Screen name='Home' component={Home}/>
-        <Screen name='Error' component={Error}/>
+        <Screen 
+          options={{headerShown: false}} 
+          name='onboarding' 
+          component={OnboardingScreen} 
+        />
+        <Screen 
+          options={{headerShown: false}} 
+          name='Login' 
+          component={LoginScreen} 
+        />
+        <Screen 
+          options={{headerShown: false}} 
+          name='Register' 
+          component={RegisterScreen} 
+        />
+        <Screen 
+          name='Home' 
+          component={Home}
+        />
+        <Screen 
+          name='Error' 
+          component={Error}
+        />
       </Navigator>
     </NavigationContainer>
   )

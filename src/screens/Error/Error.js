@@ -9,6 +9,6 @@ const Error = () => {
   )
 }
 
-export default Error
+export default Error;
 
 const styles = StyleSheet.create({})
