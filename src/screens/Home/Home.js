@@ -1,9 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import NavBar from '../../components/NavBar'
 
 const Home = () => {
   return (
     <View>
+      <NavBar title="Home" />
       <Text style={{color: 'black'}}>We are in the Home screen</Text>
     </View>
   )

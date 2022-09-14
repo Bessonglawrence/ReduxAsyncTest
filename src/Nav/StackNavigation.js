@@ -17,7 +17,7 @@ const Tab = createBottomTabNavigator();
 const MainNavigation = () =>{
   return(
     <NavigationContainer>
-      <Navigator initialRouteName='Login' >
+      <Navigator initialRouteName='Home' >
         <Screen 
           options={{headerShown: false}} 
           name='onboarding' 
@@ -34,6 +34,7 @@ const MainNavigation = () =>{
           component={RegisterScreen} 
         /> 
         <Screen
+          options={{headerShown: false}} 
           name='Home'
           component={Home}
         />

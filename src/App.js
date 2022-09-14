@@ -10,12 +10,13 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import TabNavigation from './Nav/TabNavigation';
+import { MainNavigation } from './Nav/StackNavigation';
 
 const App = () => {
 
   return (
     <Provider store={store}>
-        <TabNavigation />
+        <MainNavigation />
     </Provider>
   );
 };
