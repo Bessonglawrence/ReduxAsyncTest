@@ -5,7 +5,10 @@ import NavBar from '../../components/NavBar'
 const Home = () => {
   return (
     <View>
-      <NavBar title="Home" />
+      <NavBar 
+        title="Home"
+        iconName='search'
+       />
       <Text style={{color: 'black'}}>We are in the Home screen</Text>
     </View>
   )
