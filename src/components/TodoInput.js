@@ -7,7 +7,6 @@ import {
 } from 'react-native'
 import React from 'react'
 
-const {width, height} = Dimensions.get('screen');
 
 const TodoInput = ({onPress,value,onChangeText }) => {
   return (
@@ -22,7 +21,7 @@ const TodoInput = ({onPress,value,onChangeText }) => {
 
 const styles ={
     main:{
-        backgroundColor: 'lightgrey',
+        backgroundColor: '#d8dadb',
         flex: 3,
         marginLeft: 8,
         borderRadius: 5,
