@@ -12,7 +12,7 @@ const NavBar = ({navigation,title,iconName,onBackPress, onSearchPress}) => {
         <Text style={styles.headerText}>{title}</Text>
       </View>
       <TouchableOpacity style={styles.searchIcon} onPress={onSearchPress}>
-        <Icon name={iconName} color='#1393ec' size={40}/>
+        <Icon name={iconName} color='#3798c8' size={40}/>
       </TouchableOpacity>
     </View>
   )
@@ -22,6 +22,7 @@ export default NavBar
 
 const styles = StyleSheet.create({
   main:{
+    backgroundColor: '#b7d8dd',
     flexDirection: 'row', 
     justifyContent: 'space-between', 
     paddingHorizontal: 10, 
