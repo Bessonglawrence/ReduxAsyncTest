@@ -7,14 +7,6 @@ import { Data } from '../../Data/Data'
 
 
 
-// const Item = ({ title }) => (
-//   <View style={styles.item}>
-//     <Text style={styles.title}>{title}</Text>
-//   </View>
-// );
-
-
-
 const Home = () => {
 
   const renderItem = ({ item }) => (
