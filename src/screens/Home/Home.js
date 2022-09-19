@@ -5,6 +5,7 @@ import TodoInput from '../../components/TodoInput'
 import TodoItem from '../../components/TodoItem'
 import {useSelector, useDispatch} from 'react-redux'
 import { AddTodo } from '../../redux/Actions/todoActions'
+//import { Data } from '../../Data/Data'
 
 
 
@@ -20,13 +21,14 @@ const Home = () => {
         title: todo
       }))
     }
+    setTodo('');
   }
 
   const renderItem = ({ item }) => (
     <TodoItem title={item.title} />
   );
 
-  const todos = useSelector( state => state)
+  const todos = useSelector( state => state.todoReducer)
   const Data = todos.todos;
   const dispatch = useDispatch();
 
@@ -36,7 +38,7 @@ const Home = () => {
         title="Home"
         iconName='search'
        />
-      <TodoInput value={todo} onChangeText={setTodo} onPress={() => Alert.alert(`${todo}, was entered`)}/>
+      <TodoInput value={todo} onChangeText={setTodo} onPress={() => handlAdd()}/>
 
       <Text style={styles.headerText}>Todos</Text>
 
@@ -50,7 +52,7 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;
 
 const styles = StyleSheet.create({
   headerText:{
