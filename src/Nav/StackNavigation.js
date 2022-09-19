@@ -9,6 +9,7 @@ import RegisterScreen from '../screens/Register/RegisterScreen';
 import Home from '../screens/Home/Home';
 import Error from '../screens/Error/Error';
 import Profile from '../screens/Profile/Profile';
+import SplashScreen from '../screens/SplashScreen/SplashScreen';
 
 
 const {Navigator, Screen} = createNativeStackNavigator();
@@ -17,7 +18,7 @@ const Tab = createBottomTabNavigator();
 const MainNavigation = () =>{
   return(
     <NavigationContainer>
-      <Navigator initialRouteName='Home' >
+      <Navigator initialRouteName='Splash' >
         <Screen 
           options={{headerShown: false}} 
           name='onboarding' 
@@ -37,6 +38,11 @@ const MainNavigation = () =>{
           options={{headerShown: false}} 
           name='Home'
           component={Home}
+        />
+        <Screen 
+          options={{headerShown: false}} 
+          name='Splash'
+          component={SplashScreen}
         />
       </Navigator>
     </NavigationContainer>
