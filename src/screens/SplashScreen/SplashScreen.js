@@ -9,7 +9,7 @@ import {
 } from 'react-native'
 import React,{useEffect} from 'react'
 
-const SplashScreen = () => {
+const SplashScreen = ({navigation}) => {
 
  const handleAnimation = () => {
     Animated.timing(animatedValue, {
@@ -20,8 +20,18 @@ const SplashScreen = () => {
     }).start()
 }
 
+
+
 useEffect(() =>{
+  //Load Animated splace image
   handleAnimation();
+
+
+  // This function fires navigation after a set time period
+  const navigationTimer = setTimeout(() =>{
+    navigation.replace('Home')
+  }, 4000);
+  return () => clearTimeout(navigationTimer);
 },[]);
 
   const animatedValue = new Animated.Value(0);

@@ -2,13 +2,17 @@ import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import Icon  from 'react-native-vector-icons/MaterialIcons';
 
-const NavBar = ({navigation,title,iconName,onBackPress, onSearchPress}) => {
+const NavBar = ({navigation,title,iconName,onBackPress, onSearchPress, backButton}) => {
   return (
     <View style={styles.main}>
       <View style={{flexDirection: 'row'}}>
-        <TouchableOpacity style={styles.backIcon} onPress={() => Alert.alert("Back button Pressed")}>
+        { backButton ?
+          <TouchableOpacity style={styles.backIcon} onPress={() => Alert.alert("Back button Pressed")}>
            <Icon name='arrow-back' color='grey' size={30}/>
-        </TouchableOpacity>
+          </TouchableOpacity>
+          :
+          null
+        }
         <Text style={styles.headerText}>{title}</Text>
       </View>
       <TouchableOpacity style={styles.searchIcon} onPress={onSearchPress}>
