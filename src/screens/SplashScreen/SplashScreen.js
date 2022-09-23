@@ -39,42 +39,9 @@ useEffect(() =>{
     <View style={{flex: 1, justifyContent: 'center',}}>
       <Animated.Image
         source={require('../../images/splash.png')} 
-        style={{
-          width: 20, 
-          height: 20,
-          alignSelf: 'center',
-          marginRight: 50,
-          bottom: 30,
-          
-          transform: [
-            {
-              translateX: animatedValue.interpolate({
-                  inputRange: [0, 1],
-                  outputRange: [0, 22]
-              })
-            },
-            {
-                translateY: animatedValue.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: [0, 22]
-                })
-            },
-            {
-                scaleX: animatedValue.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: [1, 18]
-                })
-            },
-            {
-                scaleY: animatedValue.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: [1, 18]
-                })
-            }
-          ]
-        }}
+        style={styles.splashStyle}
       />
-      <Text style={{color: 'grey', fontSize: 18, alignSelf: 'center', top: 150, fontStyle: 'italic', fontWeight: '600'}}>
+      <Text style={styles.textStyle}>
         TEAM WORK MAKES THE DREAM WORK
       </Text>
     </View>
@@ -83,4 +50,47 @@ useEffect(() =>{
 
 export default SplashScreen;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  splashStyle:{
+    width: 20, 
+    height: 20,
+    alignSelf: 'center',
+    marginRight: 50,
+    bottom: 30,
+    
+    transform: [
+      {
+        translateX: animatedValue.interpolate({
+            inputRange: [0, 1],
+            outputRange: [0, 22]
+        })
+      },
+      {
+          translateY: animatedValue.interpolate({
+              inputRange: [0, 1],
+              outputRange: [0, 22]
+          })
+      },
+      {
+          scaleX: animatedValue.interpolate({
+              inputRange: [0, 1],
+              outputRange: [1, 18]
+          })
+      },
+      {
+          scaleY: animatedValue.interpolate({
+              inputRange: [0, 1],
+              outputRange: [1, 18]
+          })
+      }
+    ]
+  },
+  textStyle:{
+    color: 'grey', 
+    fontSize: 18, 
+    alignSelf: 'center', 
+    top: 150, 
+    fontStyle: 'italic', 
+    fontWeight: '600'
+  }
+})

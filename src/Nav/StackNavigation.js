@@ -10,6 +10,8 @@ import Home from '../screens/Home/Home';
 import Error from '../screens/Error/Error';
 import Profile from '../screens/Profile/Profile';
 import SplashScreen from '../screens/SplashScreen/SplashScreen';
+import Setting from '../screens/Setting/Setting';
+import Weather from '../screens/Weather/Weather';
 
 
 const {Navigator, Screen} = createNativeStackNavigator();
@@ -71,4 +73,32 @@ const ProfileStack = () =>{
   </NavigationContainer>
 }
 
-export  {MainNavigation, ErrorStack, ProfileStack}
+const SettingStack = () =>{
+  <NavigationContainer>
+    <Navigator>
+      <Screen
+        name='Setting'
+        component={Setting} 
+      />
+    </Navigator>
+  </NavigationContainer>
+}
+
+const WeatherStack = () =>{
+  <NavigationContainer>
+    <Navigator>
+      <Screen
+        name='Weather'
+        component={Weather} 
+      />
+    </Navigator>
+  </NavigationContainer>
+}
+
+export  {
+  MainNavigation, 
+  ErrorStack, 
+  ProfileStack, 
+  SettingStack, 
+  WeatherStack
+}
