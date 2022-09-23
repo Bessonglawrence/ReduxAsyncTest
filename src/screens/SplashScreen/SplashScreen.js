@@ -33,18 +33,20 @@ useEffect(() =>{
           width: 20, 
           height: 20,
           alignSelf: 'center',
+          marginRight: 50,
+          bottom: 30,
           
           transform: [
             {
               translateX: animatedValue.interpolate({
                   inputRange: [0, 1],
-                  outputRange: [0, 18]
+                  outputRange: [0, 22]
               })
             },
             {
                 translateY: animatedValue.interpolate({
                     inputRange: [0, 1],
-                    outputRange: [0, 18]
+                    outputRange: [0, 22]
                 })
             },
             {
@@ -62,12 +64,9 @@ useEffect(() =>{
           ]
         }}
       />
-
-        {/* <TouchableOpacity onPress={handleAnimation}>
-          <Text>
-              Transform Image
-          </Text>
-        </TouchableOpacity> */}
+      <Text style={{color: 'grey', fontSize: 18, alignSelf: 'center', top: 150, fontStyle: 'italic', fontWeight: '600'}}>
+        TEAM WORK MAKES THE DREAM WORK
+      </Text>
     </View>
   )
 }
