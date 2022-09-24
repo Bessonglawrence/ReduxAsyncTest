@@ -1,8 +1,9 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { MainNavigation, ErrorStack, ProfileStack, SettingStack } from './StackNavigation';
+import { MainNavigation, ErrorStack, ProfileStack, SettingStack, WeatherStack } from './StackNavigation';
 import { NavigationContainer } from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { TabRouter } from 'react-navigation';
 
 
 const Tab = createBottomTabNavigator();
@@ -25,7 +26,11 @@ const TabNavigation = () =>{
                         } else if ( route.name === 'Setting'){
                             iconName = focused
                                 ? 'setting-circle'
-                                : 'setting-circle-outline'
+                                : 'setting-circle-outline';
+                        } else if ( route.name === 'Weather'){
+                            iconName = focused 
+                                ? 'weather-circle'
+                                : 'weather-circle-outline';
                         }
             
                         // You can return any component that you like here!
@@ -38,6 +43,7 @@ const TabNavigation = () =>{
                 <Tab.Screen name='Home' component={MainNavigation} />
                 <Tab.Screen name='Profile' component={ProfileStack} />
                 <Tab.Screen name='Setting' component={SettingStack} />
+                <Tab.Screen name='Weaher' component={WeatherStack} />
             </Tab.Navigator>
         </NavigationContainer>
     )
