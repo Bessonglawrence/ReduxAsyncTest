@@ -24,8 +24,13 @@ const Home = () => {
     setTodo('');
   }
 
+  const handleDelete = ({item}) =>{
+    console.log(`${item.id} delete button has been pressed`)
+  }
+
+
   const renderItem = ({ item }) => (
-    <TodoItem title={item.title} />
+    <TodoItem title={item.title} onPress={() => handleDelete()} />
   );
 
   const todos = useSelector( state => state.todoReducer)

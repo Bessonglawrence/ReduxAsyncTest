@@ -1,9 +1,13 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { MainNavigation, ErrorStack, ProfileStack, SettingStack, WeatherStack } from './StackNavigation';
+import { 
+    MainNavigation, 
+    ProfileStack, 
+    SettingStack, 
+    WeatherStack 
+} from './StackNavigation';
 import { NavigationContainer } from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { TabRouter } from 'react-navigation';
 
 
 const Tab = createBottomTabNavigator();

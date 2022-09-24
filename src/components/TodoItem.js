@@ -8,6 +8,7 @@ import React from 'react'
 
 
 const TodoItem = ({title, onPress}) => {
+    
   return (
     <View style={styles.todoStyle}>
     <Text style={styles.titleText}>{title}</Text>
