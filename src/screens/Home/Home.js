@@ -5,7 +5,6 @@ import TodoInput from '../../components/TodoInput'
 import TodoItem from '../../components/TodoItem'
 import {useSelector, useDispatch} from 'react-redux'
 import { AddTodo } from '../../redux/Actions/todoActions'
-//import { Data } from '../../Data/Data'
 
 
 
