@@ -3,15 +3,18 @@ import { View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator} from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
-import OnboardingScreen from '../screens/OnboardingScreen/OnboardingScreen';
-import LoginScreen from '../screens/LoginScreen/LoginScreen';
-import RegisterScreen from '../screens/Register/RegisterScreen';
-import Home from '../screens/Home/Home';
-import Error from '../screens/Error/Error';
-import Profile from '../screens/Profile/Profile';
-import SplashScreen from '../screens/SplashScreen/SplashScreen';
-import Setting from '../screens/Setting/Setting';
-import Weather from '../screens/Weather/Weather';
+
+import { 
+  OnboardingScreen, 
+  LoginScreen, 
+  RegisterScreen, 
+  Home, 
+  Error, 
+  Profile,
+  SplashScreen,
+  Setting,
+  Weather 
+} from '../screens';
 
 
 const {Navigator, Screen} = createNativeStackNavigator();
