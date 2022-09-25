@@ -2,9 +2,11 @@ import { Image } from 'react-native';
 import Onboarding from 'react-native-onboarding-swiper';
 import React from 'react';
 
-const OnboardingScreen = () => {
+const OnboardingScreen = ({navigation}) => {
   return (
     <Onboarding
+        onDone={() =>navigation.replace('Login')}
+        onSkip={() =>navigation.replace('Login')}
         pages={[
             {
                 backgroundColor: '#fff',
@@ -13,6 +15,7 @@ const OnboardingScreen = () => {
                 subtitle: 'Little drops make an ocean. One commit a day will go a long way',
                 titleStyles: {color: '#b790c4',fontWeight:'700'},
                 subTitleStyles:{color: '#dbc7e2'}
+                
             },
             {
                 backgroundColor: '#fff',
