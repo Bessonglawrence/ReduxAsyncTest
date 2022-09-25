@@ -9,6 +9,10 @@ import {
 } from 'react-native'
 import React,{useEffect} from 'react'
 
+
+const animatedValue = new Animated.Value(0);
+
+
 const SplashScreen = ({navigation}) => {
 
  const handleAnimation = () => {
@@ -29,12 +33,12 @@ useEffect(() =>{
 
   // This function fires navigation after a set time period
   const navigationTimer = setTimeout(() =>{
-    navigation.replace('Home')
+    navigation.replace('Onboarding')
   }, 4000);
   return () => clearTimeout(navigationTimer);
 },[]);
 
-  const animatedValue = new Animated.Value(0);
+  
   return (
     <View style={{flex: 1, justifyContent: 'center',}}>
       <Animated.Image

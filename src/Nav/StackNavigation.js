@@ -22,11 +22,11 @@ const Tab = createBottomTabNavigator();
 
 const MainNavigation = () =>{
   return(
-    <NavigationContainer>
+    <NavigationContainer independent={true}>
       <Navigator initialRouteName='Splash' >
         <Screen 
           options={{headerShown: false}} 
-          name='onboarding' 
+          name='Onboarding' 
           component={OnboardingScreen} 
         />
         <Screen 
@@ -55,7 +55,7 @@ const MainNavigation = () =>{
 }
 
 const ErrorStack = () =>{
-  <NavigationContainer>
+  <NavigationContainer independent={true}>
     <Navigator>
       <Screen
         name='Error'
@@ -66,7 +66,7 @@ const ErrorStack = () =>{
 }
 
 const ProfileStack = () =>{
-  <NavigationContainer>
+  <NavigationContainer independent={true}>
     <Navigator>
       <Screen
         name='Profile'
@@ -77,7 +77,7 @@ const ProfileStack = () =>{
 }
 
 const SettingStack = () =>{
-  <NavigationContainer>
+  <NavigationContainer independent={true}>
     <Navigator>
       <Screen
         name='Setting'
@@ -88,7 +88,7 @@ const SettingStack = () =>{
 }
 
 const WeatherStack = () =>{
-  <NavigationContainer>
+  <NavigationContainer independent={true}>
     <Navigator>
       <Screen
         name='Weather'

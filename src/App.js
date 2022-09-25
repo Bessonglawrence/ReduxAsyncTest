@@ -16,7 +16,7 @@ const App = () => {
 
   return (
     <Provider store={store}>
-        <MainNavigation />
+        <TabNavigation />
     </Provider>
   );
 };

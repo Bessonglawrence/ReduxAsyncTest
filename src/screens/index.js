@@ -5,8 +5,8 @@ import Weather from "./Weather/Weather";
 import SplashScreen from "./SplashScreen/SplashScreen";
 import Setting from "./Setting/Setting";
 import Error from "./Error/Error";
-import LoginScreen from "./LoginScreen/LoginScreen";
 import Profile from "./Profile/Profile";
+import Home from "./Home/Home";
 
 export{
     LoginScreen,
@@ -16,6 +16,6 @@ export{
     SplashScreen,
     Setting,
     Error,
-    LoginScreen,
     Profile,
+    Home,
 }
