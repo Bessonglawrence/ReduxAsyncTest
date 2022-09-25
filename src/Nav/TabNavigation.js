@@ -8,6 +8,7 @@ import {
 } from './StackNavigation';
 import { NavigationContainer } from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { Home,Profile,Weather,Setting } from '../screens';
 
 
 const Tab = createBottomTabNavigator();
@@ -44,10 +45,10 @@ const TabNavigation = () =>{
                     tabBarInactiveTintColor: 'gray',
                     })}
             >
-                <Tab.Screen name='Home' component={MainNavigation} options={{headerShown: false}}/>
-                <Tab.Screen name='Profile' component={ProfileStack} />
-                <Tab.Screen name='Setting' component={SettingStack} />
-                <Tab.Screen name='Weaher' component={WeatherStack} />
+                <Tab.Screen name='Home' component={Home} options={{headerShown: false}}/>
+                <Tab.Screen name='Profile' component={Profile} />
+                <Tab.Screen name='Setting' component={Setting} />
+                <Tab.Screen name='Weather' component={Weather} />
             </Tab.Navigator>
         </NavigationContainer>
     )

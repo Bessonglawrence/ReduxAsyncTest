@@ -49,6 +49,22 @@ const MainNavigation = () =>{
           name='Splash'
           component={SplashScreen}
         />
+        <Screen
+          name='Error'
+          component={Error} 
+        />
+        <Screen
+          name='Profile'
+          component={Profile} 
+        />
+        <Screen
+          name='Setting'
+          component={Setting} 
+        />
+        <Screen
+          name='Weather'
+          component={Weather} 
+        />
       </Navigator>
     </NavigationContainer>
   )
