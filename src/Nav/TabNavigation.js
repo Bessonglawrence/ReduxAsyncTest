@@ -12,6 +12,7 @@ import { Home,Profile,Weather,Setting } from '../screens';
 
 
 const Tab = createBottomTabNavigator();
+
 const TabNavigation = () =>{
     return(
         <NavigationContainer independent={true}>
