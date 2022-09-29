@@ -22,7 +22,6 @@ const Tab = createBottomTabNavigator();
 
 const MainNavigation = () =>{
   return(
-    <NavigationContainer independent={true}>
       <Navigator initialRouteName='Splash' >
         <Screen 
           options={{headerShown: false}} 
@@ -66,57 +65,44 @@ const MainNavigation = () =>{
           component={Weather} 
         />
       </Navigator>
-    </NavigationContainer>
   )
 }
 
-const ErrorStack = () =>{
-  <NavigationContainer independent={true}>
-    <Navigator>
-      <Screen
-        name='Error'
-        component={Error} 
-      />
-    </Navigator>
-  </NavigationContainer>
-}
+
+const Profile = createNativeStackNavigator();
 
 const ProfileStack = () =>{
-  <NavigationContainer independent={true}>
-    <Navigator>
-      <Screen
+    <Profile.Navigator>
+      <Profile.Screen
         name='Profile'
         component={Profile} 
       />
-    </Navigator>
-  </NavigationContainer>
+    </Profile.Navigator>
 }
 
+const SettingsStack = createNativeStackNavigator();
+
 const SettingStack = () =>{
-  <NavigationContainer independent={true}>
-    <Navigator>
-      <Screen
+    <SettingsStack.Navigator>
+      <SettingStack.Screen
         name='Setting'
         component={Setting} 
       />
-    </Navigator>
-  </NavigationContainer>
+    </SettingsStack.Navigator>
 }
+const Weather = createNativeStackNavigator();
 
 const WeatherStack = () =>{
-  <NavigationContainer independent={true}>
-    <Navigator>
-      <Screen
+    <Weather.Navigator>
+      <Weather.Screen
         name='Weather'
         component={Weather} 
       />
-    </Navigator>
-  </NavigationContainer>
+    </Weather.Navigator>
 }
 
 export  {
   MainNavigation, 
-  ErrorStack, 
   ProfileStack, 
   SettingStack, 
   WeatherStack
