@@ -4,7 +4,7 @@ import NavBar from '../../components/NavBar'
 import TodoInput from '../../components/TodoInput'
 import TodoItem from '../../components/TodoItem'
 import {useSelector, useDispatch} from 'react-redux'
-import { AddTodo } from '../../redux/Actions/todoActions'
+import { AddTodo, RemoveTodo } from '../../redux/Actions/todoActions'
 
 
 
@@ -24,7 +24,12 @@ const Home = () => {
   }
 
   const handleDelete = ({item}) =>{
-    console.log(`${item.id} delete button has been pressed`)
+    const todoIndex = item.indexOf();
+    if(todoIndex > -1){
+      dispatch(RemoveTodo(item))
+    }else {
+      Alert.alert("Item does't exist in Data")
+    }
   }
 
 

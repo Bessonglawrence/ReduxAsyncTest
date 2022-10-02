@@ -1,5 +1,5 @@
-import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React from 'react';
 import Icon  from 'react-native-vector-icons/MaterialIcons';
 
 const NavBar = ({navigation,title,iconName,onBackPress, onSearchPress, backButton}) => {
