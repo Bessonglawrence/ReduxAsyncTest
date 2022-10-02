@@ -40,16 +40,16 @@ const TabNavigation = () =>{
                         }
             
                         // You can return any component that you like here!
-                        return <Ionicons name={iconName} size={20} color={color} />;
+                        return <Ionicons name={iconName} size={size} color={color} />;
                     },
                     tabBarActiveTintColor: '#3798c8',
                     tabBarInactiveTintColor: 'gray',
                     })}
             >
-                <Tab.Screen name='Home' component={Home} options={{headerShown: false}}/>
-                <Tab.Screen name='Profile' component={Profile} />
-                <Tab.Screen name='Setting' component={Setting} />
-                <Tab.Screen name='Weather' component={Weather} />
+                <Tab.Screen name='Home' component={MainNavigation} options={{headerShown: false}}/>
+                <Tab.Screen name='Profile' component={ProfileStack} />
+                <Tab.Screen name='Setting' component={SettingStack} />
+                <Tab.Screen name='Weather' component={WeatherStack} />
             </Tab.Navigator>
         </NavigationContainer>
     )

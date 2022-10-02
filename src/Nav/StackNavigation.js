@@ -1,6 +1,5 @@
 import React from 'react';
 import { View } from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator} from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -17,67 +16,55 @@ import {
 } from '../screens';
 
 
-const {Navigator, Screen} = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
+const Main = createNativeStackNavigator();
 
 const MainNavigation = () =>{
   return(
-      <Navigator initialRouteName='Splash' >
-        <Screen 
+      <Main.Navigator initialRouteName='Splash' >
+        <Main.Screen 
           options={{headerShown: false}} 
           name='Onboarding' 
           component={OnboardingScreen} 
         />
-        <Screen 
+        <Main.Screen 
           options={{headerShown: false}} 
           name='Login' 
           component={LoginScreen} 
         />
-        <Screen 
+        <Main.Screen 
           options={{headerShown: false}} 
           name='Register' 
           component={RegisterScreen} 
         /> 
-        <Screen
+        <Main.Screen
           options={{headerShown: false}} 
           name='Home'
           component={Home}
         />
-        <Screen 
+        <Main.Screen 
           options={{headerShown: false}} 
           name='Splash'
           component={SplashScreen}
         />
-        <Screen
+        <Main.Screen
           name='Error'
           component={Error} 
         />
-        <Screen
-          name='Profile'
-          component={Profile} 
-        />
-        <Screen
-          name='Setting'
-          component={Setting} 
-        />
-        <Screen
-          name='Weather'
-          component={Weather} 
-        />
-      </Navigator>
+      
+      </Main.Navigator>
   )
 }
 
 
-const Profile = createNativeStackNavigator();
+const ProfileNav = createNativeStackNavigator();
 
 const ProfileStack = () =>{
-    <Profile.Navigator>
-      <Profile.Screen
+    <ProfileNav.Navigator>
+      <ProfileNav.Screen
         name='Profile'
         component={Profile} 
       />
-    </Profile.Navigator>
+    </ProfileNav.Navigator>
 }
 
 const SettingsStack = createNativeStackNavigator();
@@ -90,15 +77,15 @@ const SettingStack = () =>{
       />
     </SettingsStack.Navigator>
 }
-const Weather = createNativeStackNavigator();
+const WeatherNav = createNativeStackNavigator();
 
 const WeatherStack = () =>{
-    <Weather.Navigator>
-      <Weather.Screen
+    <WeatherNav.Navigator>
+      <WeatherNav.Screen
         name='Weather'
         component={Weather} 
       />
-    </Weather.Navigator>
+    </WeatherNav.Navigator>
 }
 
 export  {
