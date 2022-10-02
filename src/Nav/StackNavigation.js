@@ -50,6 +50,21 @@ const MainNavigation = () =>{
           name='Error'
           component={Error} 
         />
+
+        <Main.Screen
+          name='Profile'
+          component={Profile} 
+        />
+
+        <Main.Screen
+          name='Setting'
+          component={Setting} 
+        />
+
+        <Main.Screen
+          name='Weather'
+          component={Weather} 
+        />
       
       </Main.Navigator>
   )

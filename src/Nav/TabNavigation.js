@@ -46,7 +46,8 @@ const TabNavigation = () =>{
                     tabBarInactiveTintColor: 'gray',
                     })}
             >
-                <Tab.Screen name='Home' component={MainNavigation} options={{headerShown: false}}/>
+                <Tab.Screen component={MainNavigation} options={{headerShown: false}}/>
+                <Tab.Screen name='Home' component={Home} options={{headerShown: false}}/>
                 <Tab.Screen name='Profile' component={ProfileStack} />
                 <Tab.Screen name='Setting' component={SettingStack} />
                 <Tab.Screen name='Weather' component={WeatherStack} />
